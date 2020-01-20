@@ -1,7 +1,5 @@
 package br.edu.ifal.listar_compras;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,7 +35,7 @@ public class ListaComprasController{
     }
     @RequestMapping("/excluir/{id}")
     public ModelAndView excluirItem(@PathVariable(name = "id") Long id) {
-        ModelAndView mv = new ModelAndView("redirect: /listacompras/");
+        ModelAndView mv = new ModelAndView("redirect: /listacompras");
         listaRepo.deleteById(id);
         return mv;
     }
